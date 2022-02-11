@@ -3,11 +3,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin: 10px;
 }
 
 .person {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
 }
 
@@ -27,4 +29,56 @@
 .person_set {
     color: #516464;
     margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.person_set:hover, .person :hover {
+    opacity: 0.8;
+}
+
+.show_notifications {
+    text-align: center;
+    display: block;
+    width: 24px;
+    padding: 2px 0;
+    background: #c12c2c;
+    color: #fff;
+    font-size: 8px;
+    font-weight: bold;
+    border-radius: 70%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -2px;
+}
+
+.show_click_notifications {
+    width: 150px;
+    max-height: 200px;
+    position: absolute;
+    top: 60px;
+    padding: 8px;
+    border: 1px solid #516464;
+    border-radius: 8px;
+    display: none;
+}
+
+.show_click_notifications:after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    transform: rotate(45deg);
+    border-left: 1px solid #516464;
+    border-top: 1px solid #516464;
+
+}
+
+.show_click_notifications ul li {
+    list-style: disc;
+    list-style-position: inside;
 }
