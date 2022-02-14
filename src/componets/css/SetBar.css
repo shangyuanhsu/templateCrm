@@ -6,6 +6,11 @@
     margin: 10px;
 }
 
+.set_main {
+    display: flex;
+    align-items: center;
+}
+
 .person {
     display: flex;
     align-items: center;
@@ -41,7 +46,7 @@
     text-align: center;
     display: block;
     width: 24px;
-    padding: 2px 0;
+    padding: 5px 0;
     background: #c12c2c;
     color: #fff;
     font-size: 8px;
@@ -81,4 +86,39 @@
 .show_click_notifications ul li {
     list-style: disc;
     list-style-position: inside;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: #516464;
+    border-radius: 8px;
+    margin:0 auto;
+    transition: width 0.5s;
+}
+
+
+@media screen and (max-width: 796px) {
+    .setBar {
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        width: 40px;
+        display: flex;
+        height: 40px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        cursor: pointer;
+  
+    }
+    .hamburger:hover span{
+      width: 40px;
+    }
+
 }
