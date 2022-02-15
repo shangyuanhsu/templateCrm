@@ -8,6 +8,8 @@ import SetBar from './componets/SetBar';
 import Product from './view/Product';
 import NavProvider from './contexts/Nav';
 import NavBg from './componets/NavBg';
+import ToDoContextProvider from "./contexts/ToDoContext";
+
 const App = () => {
 
   return (
@@ -16,13 +18,18 @@ const App = () => {
       <NavBar />
       <main>
       <SetBar />
+      <ToDoContextProvider>
         <Routes>
+        
           <Route path="/" element={<Dashboard />} />
           <Route path="setDashboard" element={<SetDashboard />} />
+  
           <Route path="member" element={<Member />} />
           <Route path="product" element={<Product />} />
         </Routes>
+        </ToDoContextProvider>
       </main>
+
         <NavBg />
       </NavProvider>
     </div>
