@@ -7,7 +7,6 @@
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-auto-rows: 150px; */
 
 }
 
@@ -36,8 +35,11 @@
 .box2 {
   grid-column-start: 1;
   grid-column-end: 4;
-  /* grid-row-start: 2;
-  grid-row-end: 3; */
+}
+
+.box6{
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 
@@ -66,13 +68,13 @@ canvas {
   width: 100%;
 }
 
-/* todolist */
 
-
-.toDoNavBar h3 {
+h3{
+  border-bottom: 1px solid #829a9a;
+  padding: 0 0 8px 0 ;
   margin-bottom: 10px;
-  
 }
+
 
 .toDoNavBar p {
   color: #516464;
@@ -137,10 +139,9 @@ canvas {
 }
 
 .empty {
-  margin: 20px 0;
-  /* text-align: center; */
+  margin: 10px 0;
   color: #c4c7c7;
-  font-size: 30px;
+  font-size: 1em;
 }
 
 form {
@@ -186,4 +187,23 @@ form button:hover{
   .todo_list li {
     padding: 10px;
   }
+}
+.member div{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  word-break: break-all;
+}
+.member span{
+  width: 8px;
+  height: 8px;
+  border-radius: 70%;
+  background-color: rgb(222, 222, 222);
+  margin-right: 8px ;
+}
+.member span.online{
+  background-color: rgb(137, 225, 5);
+}
+.activity div{
+  padding: 5px 0;
 }
