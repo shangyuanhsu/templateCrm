@@ -1,13 +1,13 @@
 import './css/NavBar.css';
 import logo from '../assets/img/logo.png';
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Nav } from "../contexts/Nav";
-import { useContext, useState,useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 
 
 
 const NavBar = () => {
-    const { showHam } = useContext(Nav);
+    const { showHam, changeHam } = useContext(Nav);
 
     // menu
     const [menu, setmenu] = useState([
@@ -17,11 +17,11 @@ const NavBar = () => {
         { title: "Products", icon: "shopping_bag", checked: false, url: "/product" },
     ]);
     useEffect(() => {
-        changeMenu(window.location.pathname)
+        changeMenu(window.location.pathname, false)
     }, []);
 
     // click menu change checked(classname)
-    const changeMenu = (location) => {
+    const changeMenu = (location, bool) => {
         setmenu(menu.map((item) => {
             if (item.url === location) {
                 item.checked = true;
@@ -30,8 +30,12 @@ const NavBar = () => {
             }
             return item
         }));
+        if (bool && window.innerWidth < 796) {
+            changeHam();
+        }
+
     }
- 
+
     return (
         <div className={showHam ? 'navBar navBar_show' : 'navBar'}>
             <div>
@@ -40,11 +44,11 @@ const NavBar = () => {
                 </div>
 
                 <nav>
-                    
+
                     <ul>
                         {menu.map((element, index) => {
                             return (
-                                <li className={element.checked ? "checked" : ""} onClick={() => { changeMenu(element.url) }} key={index}>
+                                <li className={element.checked ? "checked" : ""} onClick={() => { changeMenu(element.url, true) }} key={index}>
                                     <Link to={element.url}>
                                         <span className="material-icons">
                                             {element.icon}
